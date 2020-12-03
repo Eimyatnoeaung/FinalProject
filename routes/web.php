@@ -9,6 +9,8 @@ Route::get('/', [PageController::class,"index"])->name("home");
 // user
 Route::get('/user/createPost',[PageController::class,"createPost"])->name("createPost");
 Route::get('/user/userProfile',[PageController::class,"userProfile"])->name("userProfile");
+Route::get('/user/contactUs',[PageController::class,"contactUs"])->name("contactUs");
+
 
 
 
