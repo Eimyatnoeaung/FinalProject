@@ -1,7 +1,7 @@
 @extends("layout.authlayout")
 @section("content")
 <div class="container">
-    <div class="col-md-4 offset-4">
+    <div class="col-md-4 offset-4 mt-5">
      <!-- Default form login -->
 <form class="text-center border border-light p-5" action="#!">
 
