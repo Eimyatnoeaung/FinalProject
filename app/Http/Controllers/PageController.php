@@ -18,4 +18,7 @@ class PageController extends Controller
     function contactUs(){
         return view('user.ContactUs');
     }
+    function post(){
+        return redirect()->route("home")->with("message","blah blah blah");
+    }
 }
