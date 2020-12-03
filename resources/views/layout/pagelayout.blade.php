@@ -58,7 +58,7 @@
           <a class="nav-link waves-effect waves-light">1
             <i class="fas fa-envelope"></i>
           </a>
-        </li> --}}\
+        </li> --}}
         <li class="nav-item avatar dropdown">
           <a class="nav-link dropdown-toggle" id="navbarDropdownMenuLink-55" data-toggle="dropdown"
             aria-haspopup="true" aria-expanded="false">
@@ -67,7 +67,7 @@
           </a>
           <div class="dropdown-menu dropdown-menu-lg-right dropdown-secondary"
             aria-labelledby="navbarDropdownMenuLink-55">
-            <a class="dropdown-item" href="#">User Profile</a>
+            <a class="dropdown-item" href="{{ route('userProfile') }}">User Profile</a>
             <a class="dropdown-item" href="#">Logout</a>
           </div>
         </li>
