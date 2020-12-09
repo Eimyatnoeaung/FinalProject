@@ -27,7 +27,7 @@
         <a class="navbar-brand" href="{{ route('home') }}">Social App</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent-555" aria-controls="navbarSupportedContent-555" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
-    </button>
+        </button>
         <div class="collapse navbar-collapse" id="navbarSupportedContent-555">
             <ul class="navbar-nav mr-auto">
                 <li class="nav-item ">
@@ -76,7 +76,20 @@
         </div>
     </nav>
     <!--/.Navbar -->
-    @yield('content')
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-4">
+                <ul class="list-group mt-5">
+                    <li class="list-group-item"><a href="{{ route("admin.manage_premium_users") }}">Manage Premium User</a></li>
+                    <li class="list-group-item"><a href="{{ route("admin.contact_messages") }}">Contact Message</a></li>
+                </ul>
+            </div>
+            <div class="col-md-8">
+                @yield('content')
+            </div>
+        </div>
+    </div>
+
     <!-- JQuery -->
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <!-- Bootstrap tooltips -->
@@ -89,7 +102,7 @@
     <!-- notifiction here -->
     <script>
         @if(Session('message'))
-        let message ="{{Session('message')}}"
+        let message = "{{Session('message')}}"
         toastr.success(message);
         @endif
     </script>
