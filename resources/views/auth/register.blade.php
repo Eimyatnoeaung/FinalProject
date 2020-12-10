@@ -13,14 +13,14 @@
     <div class="card-body px-lg-5 pt-0">
 
         <!-- Form -->
-        <form class="text-center" style="color: #757575;" action="{{ route("post_register") }}" method="post">
+        <form class="text-center" style="color: #757575;" action="{{ route("post_register") }}" method="post" enctype="multipart/form-data">
             @csrf
 
             <div class="form-row">
                 <div class="col">
-                    <!-- First name -->
+                    <!-- Username -->
                     <div class="md-form">
-                        <input type="text" id="materialRegisterFormFirstName" class="form-control" name="uername">
+                        <input type="text" id="materialRegisterFormFirstName" class="form-control" name="username" value="{{old('username')}}">
                         @error('username')
                         <p class="text-danger">{{ $message }}</p>
                         @enderror
@@ -31,7 +31,7 @@
 
             <!-- E-mail -->
             <div class="md-form mt-0">
-                <input type="email" id="materialRegisterFormEmail" class="form-control" name="email">
+                <input type="email" id="materialRegisterFormEmail" class="form-control" name="email" value="{{old('email')}}">
                 @error('email')
                 <p class="text-danger">{{ $message }}</p>
                 @enderror
@@ -41,7 +41,7 @@
 
             <!-- Password -->
             <div class="md-form">
-                <input type="password" id="materialRegisterFormPassword" class="form-control" aria-describedby="materialRegisterFormPasswordHelpBlock" name="password">
+                <input type="password" id="materialRegisterFormPassword" class="form-control" aria-describedby="materialRegisterFormPasswordHelpBlock" name="password" value="{{old('password')}}">
                 @error('password')
                 <p class="text-danger">{{ $message }}</p>
                 @enderror
@@ -53,7 +53,7 @@
             <label for="">Select Your Profile Picture</label>
             <div class="md-form">
 
-                <input type="file" id="materialRegisterFormPassword" class="form-control" aria-describedby="materialRegisterFormPasswordHelpBlock" name="image">
+                <input type="file" id="materialRegisterFormPassword" class="form-control" aria-describedby="materialRegisterFormPasswordHelpBlock" name="image" value="{{old('image')}}">
                 @error('image')
                 <p class="text-danger">{{ $message }}</p>
                 @enderror
