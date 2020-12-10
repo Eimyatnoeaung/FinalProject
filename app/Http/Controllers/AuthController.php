@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\User;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
 
 // use Illuminate\Http\Request;
@@ -12,6 +13,33 @@ class AuthController extends Controller
     function login(){
         return view("auth.login");
      }
+     function post_login(){
+        // validate our input field
+        $validation=request()->validate([
+            "email" => "required",
+            "password" => "required",
+        ]);
+        // if validate success
+        if ($validation){
+            //if auth is success or not
+            $auth=Auth::attempt([
+                'email' => $validation['email'],
+                'password' => $validation['password']]);
+            if($auth){
+            //go to home page
+            return redirect()->route('home');
+            }else{
+                //else return back with auth failed error
+                return back()->with('error','Authentiction Failed. Try Again');
+            }
+        }
+        else{
+            //else go back login page with error
+            return back()->withErrors($validation);
+        }
+
+
+    }
      function register(){
         return view("auth.register");
      }
@@ -46,4 +74,5 @@ class AuthController extends Controller
              return back()->withErrors($validation);
          }
      }
+
 }
